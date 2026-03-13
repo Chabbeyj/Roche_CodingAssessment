@@ -44,11 +44,11 @@ ae_freq <- adae %>%
 
 
 #Plot
-g <-  ggplot(ae_freq %>% mutate(AETERM = reorder(AETERM, pct)), aes(x = pct, y = AETERM)) +
+CI_AE_plot <-  ggplot(ae_freq %>% mutate(AETERM = reorder(AETERM, pct)), aes(x = pct, y = AETERM)) +
   geom_point(size = 3) +
   geom_errorbarh(
     aes(xmin = ci_low, xmax = ci_high),
-    height = 0.3
+    width = 0.3
   ) +
   scale_x_continuous(labels = scales::percent_format()) +
   labs(
@@ -58,7 +58,13 @@ g <-  ggplot(ae_freq %>% mutate(AETERM = reorder(AETERM, pct)), aes(x = pct, y =
     y = NULL
   ) + theme_bw()
 
-g
+CI_AE_plot
+
+#Save the output
+ggsave("02_output/AE_severity_plot.png", AE_severity_plot)
+ggsave("02_output/CI_AE_plot.png", CI_AE_plot)
+
+
 
 
 
