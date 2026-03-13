@@ -18,7 +18,7 @@ Question 1/
 ├── 00_raw_data/              # Controlled terminology (sdtm_ct.csv)
 ├── 01_r_script/              # R script used to create the DS domain
 ├── 02_output/                # Output files (ds.xpt)
-├── 03_supportive_documents/  # Supportive documents (aCRF)
+├── 03_supportive_documents/  # Supportive documents (eCRF)
 ├── 04_logs/                  # Log files as evidence of error-free execution
 └── Question_1.Rproj          # R Project file
 ```
